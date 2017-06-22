@@ -6,7 +6,7 @@
 /*   By: tiskow <tiskow@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/21 01:04:44 by tiskow            #+#    #+#             */
-/*   Updated: 2016/10/26 06:21:06 by tiskow           ###   ########.fr       */
+/*   Updated: 2017/06/19 11:21:24 by tiskow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "includes/libft.h"
+# include "libft.h"
 
-# define BUFF_SIZE 4096
+# define BUFF_SIZE 21
 int		get_next_line(int const fd, char **line);
 #endif
