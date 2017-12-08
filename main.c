@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiskow <tiskow@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/21 01:04:44 by tiskow            #+#    #+#             */
-/*   Updated: 2017/12/05 20:41:08 by tiskow           ###   ########.fr       */
+/*   Created: 2017/12/05 20:31:16 by tiskow            #+#    #+#             */
+/*   Updated: 2017/12/05 21:09:36 by tiskow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
+#include <unistd.h>
+#include <fcntl.h>
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "./libft/libft.h"
+int		main()
+{
+	int fd;
+	char *line;
 
-# define BUFF_SIZE 21
-int		get_next_line(int const fd, char **line);
-#endif
+	fd = open("main.c", O_RDONLY);
+	while (get_next_line(fd, &line))
+	{
+		ft_putstr(" LINE : ");
+		ft_putstr(line);
+		ft_putchar(10);
+	}
+	close(fd);
+}
